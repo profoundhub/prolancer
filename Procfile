@@ -1,1 +1,1 @@
-web: ng build && mv dist/* .
+web: ng build
