@@ -11,17 +11,15 @@ import {FirebaseService} from './services/firebase.service';
 })
 
 export class AppComponent {
-  title = 'app works!';
-
+  title = 'Profound Ideation Inc.';
   businesses: Business[];
   categories: Category[];
+  appState: string;
+  activeKey: string;
+  
+  constructor(private _firebaseService:FirebaseService){}
 
-  constructor(private _firebaseService:FirebaseService){
-    
-  }
-
-  ngOnInit(){
-    
+  ngOnInit(){    
     this._firebaseService.getBusinesses().subscribe(businesses => {
       this.businesses = businesses
     });
@@ -29,7 +27,13 @@ export class AppComponent {
     this._firebaseService.getCategories().subscribe(categories => {
       this.categories = categories
     });
+  }
 
+  changeState(state, key){
+    if(key){
+      this.activeKey = key;
+    }
+    this.appState = state;
   }
 
 }
