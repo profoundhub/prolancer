@@ -19,7 +19,7 @@ export class AppComponent {
   
   constructor(private _firebaseService:FirebaseService){}
 
-  ngOnInit(){    
+  ngOnInit() {    
     this.appState = 'default';
     this._firebaseService.getBusinesses().subscribe(businesses => {
       this.businesses = businesses
@@ -30,11 +30,17 @@ export class AppComponent {
     });
   }
 
-  changeState(state, key){
+  changeState(state, key) {
     if(key){
       this.activeKey = key;
     }
     this.appState = state;
+  }
+
+  filterCategory(category){
+     this._firebaseService.getBusinesses(category).subscribe(businesses => {
+       this.businesses = businesses;
+     })
   }
 
 }
