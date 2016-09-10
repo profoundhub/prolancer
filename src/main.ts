@@ -12,6 +12,7 @@ bootstrap(AppComponent, [
   disableDeprecatedForms(),
   provideForms(),  
   FIREBASE_PROVIDERS,
+  
   // Initialize Firebase App  
   defaultFirebase({
     apiKey: "AIzaSyAt8czLnmYWB3wJi79u5aXM0T-LT2Vy5TA",

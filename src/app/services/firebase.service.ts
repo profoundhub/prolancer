@@ -8,9 +8,7 @@ export class FirebaseService {
     businesses: FirebaseListObservable<Business[]>;
     categories: FirebaseListObservable<Category[]>;
     
-    constructor(private af:AngularFire) {
-        
-    }
+    constructor(private af:AngularFire) {}
     
     getBusinesses(category:string = null) {
         if(category != null){
