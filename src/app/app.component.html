@@ -50,6 +50,17 @@
               <input type="text" placeholder="Company Name" #company>
               </label>
           </div> 
+          <div class="large-6 columns">
+            <label> Category
+              <select #category>
+                <option value="0">Select</option>
+                <option *ngFor="let category of categories" value="{{category.name}}">
+                  {{category.name}}
+                </option>  
+              </select>
+             </label>
+          </div> 
+          
       </div>  
     </form>  
   </div>  
