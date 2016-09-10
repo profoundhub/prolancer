@@ -32,6 +32,7 @@
 <div *ngIf="appState == 'add'">
   <div class="large-12 columns">
     <h3>Add Business</h3>
+
       <form (submit)="addBusiness(
         company.value,
         category.value,
@@ -89,7 +90,39 @@
           </div>
         </div>
 
-      </div>  
+        <div class="row">
+          <div class="medium-6 columns">
+            <label>Street Address
+              <input type="text" placeholder="Street Address" #street_address>
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>City
+              <input type="text" placeholder="City" #city>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="medium-6 columns">
+            <label>State
+              <input type="text" placeholder="State" #state>
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>Zipcode
+              <input type="text" placeholder="Zipcode" #zipcode>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="large-12">
+            <input type="submit" class="button" value="Submit">  
+          </div>  
+        </div>
+        
+      </div>
     </form>  
   </div>  
   <hr>
