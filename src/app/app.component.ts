@@ -32,6 +32,7 @@ export class AppComponent {
 
   ngOnInit() {    
     this.appState = 'default';
+
     this._firebaseService.getBusinesses().subscribe(businesses => {
       this.businesses = businesses
     });
@@ -71,15 +72,15 @@ export class AppComponent {
     var newBusiness = {
       company: company,
       category: category,
-      years_in_business:years_in_business,
-      description:description,
-      phone:phone,
-      email:email,
+      years_in_business: years_in_business,
+      description: description,
+      phone: phone,
+      email: email,
       street_address: street_address,
       city: city,
       state: state,
       zipcode: zipcode,
-      created_at:created_at
+      created_at: created_at
     }
 
     //console.log(newBusiness);
@@ -87,12 +88,12 @@ export class AppComponent {
     this._firebaseService.addBusiness(newBusiness);
     
     this.changeState('default');  
-    
+
   }
 
   showEdit(business) {
     this.changeState('edit', business.$key);
-    this.activeCompany = business.company;
+    this.activeCompany =          business.company;
     this.activeCategory =         business.category;
     this.activeYearsInBusiness =  business.years_in_business;
     this.activeDescription =      business.description;
@@ -106,12 +107,12 @@ export class AppComponent {
 
   updateBusiness() {
     var updBusiness = {
-      company:this.activeCompany,
-      category:this.activeCategory,
-      years_in_business:this.activeYearsInBusiness,
-      description:this.activeDescription,
-      phone:this.activePhone,
-      email:this.activeEmail,
+      company: this.activeCompany,
+      category: this.activeCategory,
+      years_in_business: this.activeYearsInBusiness,
+      description: this.activeDescription,
+      phone: this.activePhone,
+      email: this.activeEmail,
       street_address: this.activeStreetAddress,
       city: this.activeCity,
       state: this.activeState,
@@ -121,7 +122,12 @@ export class AppComponent {
     this._firebaseService.updateBusiness(this.activeKey, updBusiness);
     
     this.changeState('default');
-
+  }
+  
+  deleteBusiness(key) {
+    this._firebaseService.deleteBusiness(key);
+    this.changeState('default');
+  }
 }
 
 export interface Business{
