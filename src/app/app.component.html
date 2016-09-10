@@ -45,11 +45,13 @@
         zipcode.value
     )">
       <div class="row">
+
           <div class="large-6 columns">
              <label> Company
               <input type="text" placeholder="Company Name" #company>
               </label>
-          </div> 
+          </div>
+
           <div class="large-6 columns">
             <label> Category
               <select #category>
@@ -60,10 +62,37 @@
               </select>
              </label>
           </div> 
-          
+
+          <div class="row">
+            <div class="medium-6 columns">
+              <label>Years In Business
+                <input type="text" placeholder="Years In Business" #years_in_business>
+              </label>
+            </div>
+          <div class="medium-6 columns">
+            <label>Description
+               <textarea #description></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="medium-6 columns">
+            <label>Phone
+              <input type="text" placeholder="Phone" #phone>
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>Email
+              <input type="text" placeholder="Email" #email>
+            </label>
+          </div>
+        </div>
+
       </div>  
     </form>  
   </div>  
+  <hr>
 </div>
 
 <div *ngIf="appState == 'extend'">
