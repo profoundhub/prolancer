@@ -186,12 +186,12 @@
                 <td>{{ business.phone }}</td>
                 <td>
                   <button (click)="changeState('extend', business.$key)" class="button">More</button>
-                  <button class="button secondary">Edit</button>
-                  <button class="button alert">Delete</button>
+                  <button (click)="showEdit(business)" class="button secondary">Edit</button>
+                  <button (click)="deleteBusiness(business.$key)" class="button alert">Delete</button>
                 </td>
             </tr>
           </tbody>
-          
+
         </table>
 
     </div>
