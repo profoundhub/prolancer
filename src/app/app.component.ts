@@ -12,16 +12,27 @@ import {FirebaseService} from './services/firebase.service';
 
 export class AppComponent {
   title = 'app works!';
-//  items: FirebaseListObservable<any[]>;
+
   businesses: Business[];
   categories: Category[];
 
-  constructor(af: AngularFire) {
-//    this.items = af.database.list('/items');
-//    console.log(this.items);
+  constructor(private _firebaseService:FirebaseService){
+    
   }
-}
 
+  ngOnInit(){
+    
+    this._firebaseService.getBusinesses().subscribe(businesses => {
+      this.businesses = businesses
+    });
+    
+    this._firebaseService.getCategories().subscribe(categories => {
+      this.categories = categories
+    });
+
+  }
+
+}
 
 export interface Business{
     $key?: string;

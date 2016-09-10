@@ -21,6 +21,7 @@ export class FirebaseService {
         this.categories = this.af.database.list('/categories') as FirebaseListObservable<Category[]>
         return this.categories;
     }
+    
 } 
 
 export interface Business {
