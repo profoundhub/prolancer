@@ -20,6 +20,7 @@ export class AppComponent {
   constructor(private _firebaseService:FirebaseService){}
 
   ngOnInit(){    
+    this.appState = 'default';
     this._firebaseService.getBusinesses().subscribe(businesses => {
       this.businesses = businesses
     });
