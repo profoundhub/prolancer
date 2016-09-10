@@ -1,8 +1,11 @@
 {
   "name": "prolancer",
   "version": "1.0.0",
+  "engines": {
+    "node": "5.9.1"
+  },
   "license": "MIT",
-  "angular-cli": {},
+  "angular-cli": {},  
   "scripts": {
     "start": "http-server",
     "lint": "tslint \"src/**/*.ts\"",
