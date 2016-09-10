@@ -8,9 +8,7 @@ export class FirebaseService {
     businesses: FirebaseListObservable<Business[]>;
     categories: FirebaseListObservable<Category[]>;
     
-    constructor(private af:AngularFire) {
-        
-    }
+    constructor(private af:AngularFire) {}
     
     getBusinesses(category:string = null) {
         if(category != null){
@@ -30,6 +28,10 @@ export class FirebaseService {
         this.categories = this.af.database.list('/categories') as FirebaseListObservable<Category[]>
         return this.categories;
     }
+
+    addBusiness(newBusiness): Promise<any> {
+        return this.businesses.push(newBusiness);
+    }
     
 } 
 
@@ -48,7 +50,7 @@ export interface Business {
     created_at: string;
 }
 
-export interface Category{
+export interface Category {
     $key?: string;
     name?: string;
 }
