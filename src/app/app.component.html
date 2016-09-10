@@ -29,6 +29,32 @@
   </div>
 </div>
 
+<div *ngIf="appState == 'add'">
+  <div class="large-12 columns">
+    <h3>Add Business</h3>
+      <form (submit)="addBusiness(
+        company.value,
+        category.value,
+        years_in_business.value, 
+        description.value,
+        phone.value,
+        email.value,
+        street_address.value,
+        city.value,
+        state.value,
+        zipcode.value
+    )">
+      <div class="row">
+          <div class="large-6 columns">
+             <label> Company
+              <input type="text" placeholder="Company Name" #company>
+              </label>
+          </div> 
+      </div>  
+    </form>  
+  </div>  
+</div>
+
 <div *ngIf="appState == 'extend'">
   <div class="row">
 
