@@ -11,7 +11,7 @@ import {FirebaseService} from './services/firebase.service';
 })
 
 export class AppComponent {
-  title = 'app works!';
+  title = 'Profound Ideation Inc. !';
 
   businesses: Business[];
   categories: Category[];
