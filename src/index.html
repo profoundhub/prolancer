@@ -16,7 +16,7 @@
   <app-root>Loading &hellip; </app-root>
   
     {{#each scripts.polyfills}}
-    <script src="{{.}}"></script>
+    <script src="{{ . }}"></script>
     {{/each}}
     <script>
       System.import('system-config.js').then(function () {
