@@ -2,7 +2,7 @@
   "name": "prolancer",
   "version": "1.0.0",
   "engines": {
-    "node": "5.9.1"
+    "node": "6.3.1"
   },
   "license": "MIT",
   "angular-cli": {},
@@ -44,7 +44,8 @@
     "ts-node": "1.6.0",
     "tslint": "3.15.1",
     "typescript": "^2.0.0",
-    "zone.js": "0.6.26"
+    "zone.js": "0.6.26",
+    "yarn": "^0.16.1"
   },
   "devDependencies": {
     "yarn": "^0.16.1"
